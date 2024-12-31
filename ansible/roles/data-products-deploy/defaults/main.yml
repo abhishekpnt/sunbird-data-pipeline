@@ -306,7 +306,6 @@ run_ministry_learner_leaderboard_job:
     minute: 35
 run_monthly_requests_job:
   monthly-requests:
-    day: 01
     hour: 11
     minute: 00
 run_learner_leaderboard_job:
