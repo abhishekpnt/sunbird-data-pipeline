@@ -246,23 +246,23 @@ run_cba_report_job:
 run_blended_program_report_job:
   blended-program-report:
     hour: 05
-    minute: 15
+    minute: 25
 run_kcm_report_job:
   kcm-report:
     hour: 06
-    minute: 15
+    minute: 25
 run_wfs_job:
   wfs:
     hour: 06
-    minute: 20
+    minute: 30
 run_in_app_review_feed_job:
   in-app-review-feed:
     hour: 06
     minute: 45
 run_survey_nps_job:
   survey-nps:
-    hour: 06
-    minute: 55
+    hour: 07
+    minute: 00
 run_ministry_metrics_job:
   ministry-metrics:
     hour : 07
@@ -306,7 +306,6 @@ run_ministry_learner_leaderboard_job:
     minute: 35
 run_monthly_requests_job:
   monthly-requests:
-    day: 01
     hour: 11
     minute: 00
 run_learner_leaderboard_job:
