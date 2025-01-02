@@ -266,7 +266,7 @@ run_survey_nps_job:
 run_ministry_metrics_job:
   ministry-metrics:
     hour : 07
-    minute: 05
+    minute: 10
 run_summary_redis_sync_job:
   summary-redis-sync:
     hour: 07
