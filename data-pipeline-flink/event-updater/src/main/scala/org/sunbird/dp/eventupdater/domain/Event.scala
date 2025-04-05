@@ -1,16 +1,18 @@
-class Event(eventMap: java.util.Map[String, Any], partition: Int, offset: Long)  extends JobRequest(eventMap, partition, offset) {
-    def action: String = readOrDefault[String]("edata.action", "")
+package org.sunbird.dp.eventupdater.domain
 
-    def eData: Map[String, AnyRef] = readOrDefault[Map[String, AnyRef]]("edata", Map[String, AnyRef]())
 
-    def batchId: String = readOrDefault[String]("edata.batchId", "")
+import java.util
 
-    def eventType: String = readOrDefault[String]("edata.type", "")
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import org.sunbird.dp.eventupdater.task.EventUpdaterConfig
 
-    def typeId: String = readOrDefault[String]("edata.typeId", "")
 
-    def userId: String = readOrDefault[String]("edata.userId", "")
-
-    def status: String = readOrDefault[String]("edata.status", "")
-
+object Event {
+  def getValueOrDefault[T](value: T, defaultValue: T): T = if (value == null) defaultValue
+  else value
 }
+
+class Event() {
+}
+
