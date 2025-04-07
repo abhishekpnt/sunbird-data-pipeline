@@ -17,13 +17,13 @@ class EventUpdaterConfig(override val config: Config) extends BaseJobConfig(conf
   val jobParallelism: Int = config.getInt("task.job.parallelism")
 
   // PostgreSQL Configuration
-  val postgresUser: String = config.getString("postgres.user")
-  val postgresPassword: String = config.getString("postgres.password")
-  val postgresTable: String = config.getString("postgres.table")
-  val postgresDb: String = config.getString("postgres.database")
-  val postgresHost: String = config.getString("postgres.host")
-  val postgresPort: Int = config.getInt("postgres.port")
-  val postgresMaxConnections: Int = config.getInt("postgres.maxConnections")
+  val postgresUser: String = "postgres"
+  val postgresPassword: String = "password123"
+  val postgresTable: String = "user_detail"
+  val postgresDb: String = "test_warehouse"
+  val postgresHost: String = "10.175.3.37"
+  val postgresPort: Int = 5432
+  val postgresMaxConnections: Int = 2
 
   // Metrics
   val successCount = "success-event-count"
