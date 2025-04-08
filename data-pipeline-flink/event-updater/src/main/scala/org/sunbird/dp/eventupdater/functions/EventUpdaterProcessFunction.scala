@@ -60,7 +60,9 @@ class EventUpdaterProcessFunction(config: EventUpdaterConfig,
   }
 
   def addToPostgres(data: String): Unit = {
-    val postgresQuery = "INSERT INTO " + config.postgresTable + " (data, created_at) VALUES (?, ?)"
+    val postgresQuery = """INSERT INTO user_detail (user_id, mdo_id, status, no_of_karma_points, full_name, designation, email, phone_number, groups, tag, profile_status, user_registration_date, roles, gender, category, marked_as_not_my_user, is_verified_karmayogi, created_by_id, external_system, external_system_id, weekly_claps_day_before_yesterday, total_event_learning_hours, total_content_learning_hours, total_learning_hours, employee_id, data_last_generated_on)
+                          |VALUES (userID,mdoID,"active",12,"user 1 ","accountant","user@1.com","9898989898","group a","tag b","active","2025-09-11 12:36:36","PUBLIC","Male","SC",
+                          |"False","true","090909090909090","","",2,"1","2","3","DX333","2025-03-27 01:34:34")""".stripMargin
     val preparedStatement = postgresConnect.getConnection.prepareStatement(postgresQuery)
     preparedStatement.setString(1, data)
     preparedStatement.setTimestamp(2, new Timestamp(System.currentTimeMillis()))
